@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
+    <title>Ivy Wambui Mbote - 19th Birthday</title>
+    <meta
+      name="description"
+      content="Celebrate Ivy Wambui Mbote’s 19th birthday with confetti, countdown, photos, music, and heartfelt wishes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <header class="shell">
+      <nav class="nav">
+        <a class="brand" href="#top" aria-label="Go to top">
+          <span class="brandDot" aria-hidden="true"></span>
+          <span>Birthday</span>
+        </a>
+        <div class="navLinks">
+          <a href="#message">Message</a>
+          <a href="#gallery">Gallery</a>
+        </div>
+        <button class="btn ghost" id="btnCelebrate" type="button">
+          Celebrate
+        </button>
+      </nav>
+    </header>
+
+    <main class="shell" id="top">
+      <section class="hero">
+        <div class="heroCard">
+          <div class="badge">
+            <span class="pulse" aria-hidden="true"></span>
+            <span id="badgeText">Today is your day</span>
+          </div>
+
+          <h1 class="headline">
+            Happy Birthday,
+            <span class="accent" id="personName">Friend</span>
+          </h1>
+
+          <p class="subhead" id="heroSubhead">
+            Wishing you a day filled with joy, laughs, and the kind of moments
+            you’ll remember for a long time.
+          </p>
+
+          <div class="countdown" aria-label="Countdown">
+            <div class="timeBox">
+              <div class="time" id="cdDays">--</div>
+              <div class="label">Days</div>
+            </div>
+            <div class="timeBox">
+              <div class="time" id="cdHours">--</div>
+              <div class="label">Hours</div>
+            </div>
+            <div class="timeBox">
+              <div class="time" id="cdMins">--</div>
+              <div class="label">Minutes</div>
+            </div>
+            <div class="timeBox">
+              <div class="time" id="cdSecs">--</div>
+              <div class="label">Seconds</div>
+            </div>
+          </div>
+
+          <div class="heroActions">
+            <button class="btn" id="btnPlay" type="button">
+              Play birthday music
+            </button>
+            <button class="btn ghost" id="btnWish" type="button">
+              Make a wish
+            </button>
+          </div>
+
+          <div class="hint" id="audioHint" role="status" aria-live="polite">
+            Tip: audio needs a click to start on most browsers.
+          </div>
+        </div>
+
+        <aside class="sideCard" aria-label="Birthday highlights">
+          <div class="sideTop">
+            <div class="avatar" aria-hidden="true">
+              <span id="avatarInitial">F</span>
+            </div>
+            <div class="sideMeta">
+              <div class="sideTitle" id="sideTitle">Birthday vibes</div>
+              <div class="sideSub" id="sideSub">
+                Small surprises, big smiles.
+              </div>
+            </div>
+          </div>
+
+          <div class="chips" aria-label="Highlights">
+            <span class="chip">Cake</span>
+            <span class="chip">Laughs</span>
+            <span class="chip">Friends</span>
+            <span class="chip">Memories</span>
+          </div>
+
+          <div class="quote" id="quote">
+            “May your year be as bright as your smile.”
+          </div>
+
+          <div class="micro">
+            <div class="microRow">
+              <span class="dot ok" aria-hidden="true"></span>
+              <span id="microLine">Ready to celebrate</span>
+            </div>
+            <button class="btn tiny" id="btnCopyLink" type="button">
+              Copy share link
+            </button>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grid" id="message">
+        <div class="card">
+          <h2>Message</h2>
+          <p class="muted" id="messageText">
+            You deserve all the good things—today and every day. Keep shining,
+            keep growing, and keep being you.
+          </p>
+
+          <div class="divider" aria-hidden="true"></div>
+
+          <div class="twoCol">
+            <div>
+              <div class="kicker">From</div>
+              <div class="value" id="fromName">Someone who cares</div>
+            </div>
+            <div>
+              <div class="kicker">To</div>
+              <div class="value" id="toName">Friend</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card wishCard">
+          <h2>Wish jar</h2>
+          <p class="muted">
+            Write a wish and tap “Save”. It stays on this device.
+          </p>
+          <form id="wishForm" class="wishForm">
+            <input
+              id="wishInput"
+              class="input"
+              type="text"
+              maxlength="120"
+              placeholder="A wish for the birthday star…"
+              autocomplete="off"
+            />
+            <button class="btn" type="submit">Save</button>
+          </form>
+          <ul id="wishList" class="wishList" aria-label="Saved wishes"></ul>
+        </div>
+      </section>
+
+      <section class="card" id="gallery">
+        <div class="galleryTop">
+          <div>
+            <h2>Gallery</h2>
+            <p class="muted">
+              Replace these placeholders with your favorite photos.
+            </p>
+          </div>
+          <label class="fileBtn">
+            <input id="photoPicker" type="file" accept="image/*" multiple />
+            Add photos
+          </label>
+        </div>
+
+        <div class="gallery" id="galleryGrid" aria-label="Photo gallery">
+          <div class="photo">
+            <img
+              src="https://wilson-1907.github.io/ivy/ivy1.jpeg"
+              alt="Ivy Wambui Mbote"
+            />
+          </div>
+          <div class="ph">
+            <div class="phInner">Add a photo</div>
+          </div>
+          <div class="ph">
+            <div class="phInner">Add a photo</div>
+          </div>
+          <div class="ph">
+            <div class="phInner">Add a photo</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footerInner">
+          <span class="muted">Made with care.</span>
+          <a class="muted" href="#top">Back to top</a>
+        </div>
+      </footer>
+    </main>
+
+    <audio id="music" preload="auto" loop>
+      <source src="unanifaa.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
