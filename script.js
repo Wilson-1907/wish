@@ -4,7 +4,7 @@ const $ = (sel) => document.querySelector(sel);
 const STORAGE_KEY = "birthday_site_v1";
 
 const defaultState = {
-  name: "Ivy Wambui Mbote",
+  name: "The Missing Puzzle",
   from: "From Wilson",
   to: "The Missing Puzzle",
   message: `Something beautiful is approaching… 🌙
@@ -460,4 +460,5 @@ function main() {
 }
 
 window.addEventListener("DOMContentLoaded", main);
+
 
